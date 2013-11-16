@@ -17,15 +17,23 @@
     android:layout_height="wrap_content"
     android:background="@drawable/blue">
     
-   <TableRow>
-       
+   <TableRow>      
        <TextView android:layout_width="0dip" 
            android:layout_height="wrap_content"
-           android:layout_weight="2"
+           android:layout_weight="1"
            android:text="Enter RGB"
            android:textColor="#FFFFFF"
            />
+       </TableRow>
        
+       <TableRow >
+       <SeekBar android:max="255"
+           android:layout_width="0dip"
+           android:layout_height="wrap_content"
+           android:id="@+id/redSeekBar"
+           android:layout_weight="3"
+           
+           />
        <EditText android:layout_width="0dip" 
            android:layout_height="wrap_content"
            android:layout_weight="1"
@@ -33,6 +41,15 @@
            android:inputType="number"
            android:hint="R"
            android:maxLength="3"
+           />
+       </TableRow>
+       
+       <TableRow >
+       <SeekBar android:max="255"
+           android:layout_width="0dip"
+           android:layout_height="wrap_content"
+           android:id="@+id/greenSeekBar"
+           android:layout_weight="3"
            />
        <EditText android:layout_width="0dip" 
            android:layout_height="wrap_content"
@@ -42,6 +59,15 @@
            android:hint="G"
            android:maxLength="3"
            />
+       </TableRow>
+       
+       <TableRow >
+       <SeekBar android:max="255"
+           android:layout_width="0dip"
+           android:layout_height="wrap_content"
+           android:id="@+id/blueSeekBar"
+           android:layout_weight="3"
+           />
        <EditText android:layout_width="0dip" 
            android:layout_height="wrap_content"
            android:layout_weight="1"
@@ -50,34 +76,35 @@
            android:hint="B"
            android:maxLength="3"
            />
+       </TableRow>
        
-   </TableRow>
    
    <TableRow android:layout_marginTop="20dp"
-       android:layout_marginBottom="20dp" >
+       android:layout_marginBottom="20dp" 
+       android:background="@drawable/hexlabel">
    
    <TextView android:layout_width="0dip"
        android:layout_height="wrap_content"
        android:textColor="#FFFFFF"
-       android:layout_weight="1"
+       android:layout_weight="6"
    	   android:id="@+id/hexValue"
    	   android:gravity="center"
    	   android:textSize="48sp"
+   	   android:shadowColor="#000000"
+   	   android:shadowRadius="1"
+   	   android:shadowDx="1"
+   	   android:shadowDy="1"
+   	   
        />    
+       <TextView 
+           android:layout_width="0dip"
+           android:layout_height="fill_parent"
+           android:id="@+id/colorIndicator"
+           android:background="@drawable/hexlabel"
+           android:layout_weight="1"/>
        
    </TableRow>
-   
-   <TableRow >
-       <Button android:layout_width="0dip"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:background="@drawable/green_button"
-           android:text="Convert to HEX"
-           android:textColor="#FFFFFF"
-           android:onClick="convertToHex"/>
-       
-   </TableRow>
-    
+  
 </TableLayout>
 
     </ScrollView>
