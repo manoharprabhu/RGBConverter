@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -120,6 +121,9 @@ public class MainActivity extends Activity {
 		((SeekBar)findViewById(R.id.greenSeekBar)).setOnSeekBarChangeListener(greenListener);
 		((SeekBar)findViewById(R.id.blueSeekBar)).setOnSeekBarChangeListener(blueListener);
 	
+		((EditText)findViewById(R.id.redR)).setSelectAllOnFocus(true);
+		((EditText)findViewById(R.id.greenG)).setSelectAllOnFocus(true);
+		((EditText)findViewById(R.id.blueB)).setSelectAllOnFocus(true);
 		
 		
 		
