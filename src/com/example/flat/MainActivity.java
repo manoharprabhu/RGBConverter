@@ -1,26 +1,20 @@
 package com.example.flat;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import android.app.Activity;
-import android.content.res.ColorStateList;
-import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.View;
-import android.view.View.OnKeyListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
@@ -30,7 +24,29 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		setListeners();
-		
+		drawCustomThumb();
+	
+	}
+	
+	public void drawCustomThumb() {
+		ShapeDrawable redThumb = new ShapeDrawable(new RectShape());
+		redThumb.getPaint().setColor(Color.rgb(255, 0, 0));
+		redThumb.setIntrinsicHeight(60);
+		redThumb.setIntrinsicWidth(5);
+	    
+	    ShapeDrawable greenThumb = new ShapeDrawable(new RectShape());
+	    greenThumb.getPaint().setColor(Color.rgb(0, 255, 0));
+	    greenThumb.setIntrinsicHeight(60);
+	    greenThumb.setIntrinsicWidth(5);
+	    
+	    ShapeDrawable blueThumb = new ShapeDrawable(new RectShape());
+	    blueThumb.getPaint().setColor(Color.rgb(0, 0, 255));
+	    blueThumb.setIntrinsicHeight(60);
+	    blueThumb.setIntrinsicWidth(5);
+	    
+	    ((SeekBar)findViewById(R.id.redSeekBar)).setThumb(redThumb);
+	    ((SeekBar)findViewById(R.id.greenSeekBar)).setThumb(greenThumb);
+	    ((SeekBar)findViewById(R.id.blueSeekBar)).setThumb(blueThumb);
 	}
 	
 	public void setListeners(){

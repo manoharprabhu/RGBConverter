@@ -17,7 +17,6 @@
         <activity
             android:name="com.example.flat.MainActivity"
             android:label="@string/app_name" 
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"
             >
             <intent-filter>
