@@ -51,51 +51,8 @@ public class MainActivity extends Activity {
 	}
 	
 	public void setListeners(){
-		OnSeekBarChangeListener blueListener = new OnSeekBarChangeListener() {
-			
-	
-			@Override
-			public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-				((EditText)findViewById(R.id.blueB)).setText(String.valueOf(arg0.getProgress()));
-				convertHelper();
-			}
-
-			@Override
-			public void onStartTrackingTouch(SeekBar arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void onStopTrackingTouch(SeekBar arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		};
 		
-		OnSeekBarChangeListener greenListener = new OnSeekBarChangeListener() {
-			
-			
-			@Override
-			public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-				((EditText)findViewById(R.id.greenG)).setText(String.valueOf(arg0.getProgress()));
-				convertHelper();
-			}
-
-			@Override
-			public void onStartTrackingTouch(SeekBar arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void onStopTrackingTouch(SeekBar arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		};
-		
-		OnSeekBarChangeListener redListener = new OnSeekBarChangeListener() {
+		((SeekBar)findViewById(R.id.redSeekBar)).setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			
 			
 			@Override
@@ -115,11 +72,51 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				
 			}
-		};
-		
-		((SeekBar)findViewById(R.id.redSeekBar)).setOnSeekBarChangeListener(redListener);
-		((SeekBar)findViewById(R.id.greenSeekBar)).setOnSeekBarChangeListener(greenListener);
-		((SeekBar)findViewById(R.id.blueSeekBar)).setOnSeekBarChangeListener(blueListener);
+		});
+		((SeekBar)findViewById(R.id.greenSeekBar)).setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			
+			
+			@Override
+			public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+				((EditText)findViewById(R.id.greenG)).setText(String.valueOf(arg0.getProgress()));
+				convertHelper();
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		((SeekBar)findViewById(R.id.blueSeekBar)).setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			
+	
+			@Override
+			public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+				((EditText)findViewById(R.id.blueB)).setText(String.valueOf(arg0.getProgress()));
+				convertHelper();
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			
+		});
 	
 		((EditText)findViewById(R.id.redR)).setSelectAllOnFocus(true);
 		((EditText)findViewById(R.id.greenG)).setSelectAllOnFocus(true);
