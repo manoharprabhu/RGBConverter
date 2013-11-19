@@ -3,6 +3,7 @@ package com.example.flat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import android.R.integer;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
@@ -12,6 +13,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -251,6 +253,22 @@ public class MainActivity extends Activity {
 			((EditText)findViewById(R.id.greenG)).setText("255");
 		}
 		
+		if(red < 0)
+		{
+			red = 0;
+			((EditText)findViewById(R.id.redR)).setText("0");
+		}
+		
+		if(blue < 0){
+			blue = 0;
+			((EditText)findViewById(R.id.blueB)).setText("0");
+		}
+		
+		if(green < 0){
+			green = 0;
+			((EditText)findViewById(R.id.greenG)).setText("0");
+		}
+		
 		TextView hexValueTextView = (TextView)findViewById(R.id.hexValue);
 		
 		hexValueTextView.setText("#" + getHexValue(red) + getHexValue(green) + getHexValue(blue));
@@ -284,5 +302,32 @@ public class MainActivity extends Activity {
 		}
 		return reverseStringCode;
 	}
-
+	
+	public void changeByte(View view){
+	
+		Button clickedButton = (Button)view;
+		
+		convertHelper();
+		
+		if(clickedButton.getId() == R.id.firstByteIncrease) {
+			int value = Integer.parseInt(((EditText)findViewById(R.id.redR)).getText().toString());
+			((EditText)findViewById(R.id.redR)).setText(String.valueOf(value + 1));
+		} else if(clickedButton.getId() == R.id.firstByteDecrease) {
+			int value = Integer.parseInt(((EditText)findViewById(R.id.redR)).getText().toString());
+			((EditText)findViewById(R.id.redR)).setText(String.valueOf(value - 1));
+		} else if(clickedButton.getId() == R.id.secondByteIncrease) {
+			int value = Integer.parseInt(((EditText)findViewById(R.id.greenG)).getText().toString());
+			((EditText)findViewById(R.id.greenG)).setText(String.valueOf(value + 1));
+		} else if(clickedButton.getId() == R.id.secondByteDecrease) {
+			int value = Integer.parseInt(((EditText)findViewById(R.id.greenG)).getText().toString());
+			((EditText)findViewById(R.id.greenG)).setText(String.valueOf(value - 1));
+		} else if(clickedButton.getId() == R.id.thirdByteIncrease) {
+			int value = Integer.parseInt(((EditText)findViewById(R.id.blueB)).getText().toString());
+			((EditText)findViewById(R.id.blueB)).setText(String.valueOf(value + 1));
+		} else if(clickedButton.getId() == R.id.thirdByteDecrease) {
+			int value = Integer.parseInt(((EditText)findViewById(R.id.blueB)).getText().toString());
+			((EditText)findViewById(R.id.blueB)).setText(String.valueOf(value - 1));
+		}
+		
+	}
 }
