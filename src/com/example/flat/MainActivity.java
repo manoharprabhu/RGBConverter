@@ -142,11 +142,11 @@ public class MainActivity extends Activity {
 			}
 			
 			@Override
-			public void afterTextChanged(Editable arg0) {
-				if(arg0.toString().equals("")){
-					arg0.append('0');
+			public void afterTextChanged(Editable redbox) {
+				if(redbox.toString().equals("")){
+					redbox.append('0');
 				}
-				((SeekBar)findViewById(R.id.redSeekBar)).setProgress(Integer.parseInt(arg0.toString()));
+				((SeekBar)findViewById(R.id.redSeekBar)).setProgress(Integer.parseInt(redbox.toString()));
 			((EditText)findViewById(R.id.redR)).setSelection(((EditText)findViewById(R.id.redR)).length());
 			convertHelper();
 			}
@@ -168,11 +168,11 @@ public class MainActivity extends Activity {
 			}
 			
 			@Override
-			public void afterTextChanged(Editable arg0) {
-				if(arg0.toString().equals("")){
-					arg0.append('0');
+			public void afterTextChanged(Editable greenbox) {
+				if(greenbox.toString().equals("")){
+					greenbox.append('0');
 				}
-				((SeekBar)findViewById(R.id.greenSeekBar)).setProgress(Integer.parseInt(arg0.toString()));
+				((SeekBar)findViewById(R.id.greenSeekBar)).setProgress(Integer.parseInt(greenbox.toString()));
 			((EditText)findViewById(R.id.greenG)).setSelection(((EditText)findViewById(R.id.greenG)).length());
 			convertHelper();
 			}
@@ -195,11 +195,11 @@ public class MainActivity extends Activity {
 	}
 	
 	@Override
-	public void afterTextChanged(Editable arg0) {
-		if(arg0.toString().equals("")){
-			arg0.append('0');
+	public void afterTextChanged(Editable bluebox) {
+		if(bluebox.toString().equals("")){
+			bluebox.append('0');
 		}
-		((SeekBar)findViewById(R.id.blueSeekBar)).setProgress(Integer.parseInt(arg0.toString()));
+		((SeekBar)findViewById(R.id.blueSeekBar)).setProgress(Integer.parseInt(bluebox.toString()));
 	((EditText)findViewById(R.id.blueB)).setSelection(((EditText)findViewById(R.id.blueB)).length());
 	convertHelper();
 	}
