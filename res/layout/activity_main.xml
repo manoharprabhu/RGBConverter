@@ -69,31 +69,7 @@
        </TableRow>
        
    
-   <TableRow android:layout_marginTop="10dp"
-       android:layout_marginBottom="10dp" 
-       android:background="@drawable/hexlabel">
    
-   <TextView android:layout_width="0dip"
-       android:layout_height="wrap_content"
-       android:textColor="#FFFFFF"
-       android:layout_weight="6"
-   	   android:id="@+id/hexValue"
-   	   android:gravity="center"
-   	   android:textSize="48sp"
-   	   android:shadowColor="#000000"
-   	   android:shadowRadius="1"
-   	   android:shadowDx="1"
-   	   android:shadowDy="1"
-   	   
-       />    
-       <TextView 
-           android:layout_width="0dip"
-           android:layout_height="fill_parent"
-           android:id="@+id/colorIndicator"
-           android:background="@drawable/hexlabel"
-           android:layout_weight="1"/>
-       
-   </TableRow>
    <TableRow >
        <Button 
            android:layout_width="0dip"
@@ -118,7 +94,12 @@
            android:onClick="changeByte"/>
        
    </TableRow>
-   <TableRow >
+   <TableRow android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:background="@drawable/hexlabel">
+   
+   <TextView android:layout_width="0dip" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:layout_weight="6" android:id="@+id/hexValue" android:gravity="center" android:textSize="48sp" android:shadowColor="#000000" android:shadowRadius="1" android:shadowDx="1" android:shadowDy="1" />    
+       <TextView android:layout_width="0dip" android:layout_height="fill_parent" android:id="@+id/colorIndicator" android:background="@drawable/hexlabel" android:layout_weight="1" />
+       
+   </TableRow><TableRow >
        <Button 
            android:layout_width="0dip"
            android:layout_height="wrap_content"
